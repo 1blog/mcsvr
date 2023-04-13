@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)file:///D:/Documents/mc/index.html -->
+<html lang="zh-CN" style="font-size: 15.2px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+    (function() {
+    class RuffleMimeType {
+        constructor(a, b, c) {
+            this.type = a, this.description = b, this.suffixes = c
+        }
+    }
+    class RuffleMimeTypeArray {
+        constructor(a) {
+            this.__mimetypes = [], this.__named_mimetypes = {};
+            for (let b of a) this.install(b)
+        }
+        install(a) {
+            let b = this.__mimetypes.length;
+            this.__mimetypes.push(a), this.__named_mimetypes[a.type] = a, this[a.type] = a, this[b] = a
+        }
+        item(a) {
+            return this.__mimetypes[a]
+        }
+        namedItem(a) {
+            return this.__named_mimetypes[a]
+        }
+        get length() {
+            return this.__mimetypes.length
+        }
+    }
+    class RufflePlugin extends RuffleMimeTypeArray {
+        constructor(a, b, c, d) {
+            super(d), this.name = a, this.description = b, this.filename = c
+        }
+        install(a) {
+            a.enabledPlugin || (a.enabledPlugin = this), super.install(a)
+        }
+    }
+    class RufflePluginArray {
+        [Symbol.iterator]() {
+            return this.__plugins[Symbol.iterator]()
+        }
+        constructor(a) {
+            this.__plugins = [], this.__named_plugins = {};
+            for (let b of a) this.install(b)
+        }
+        install(a) {
+            let b = this.__plugins.length;
+            this.__plugins.push(a), this.__named_plugins[a.name] = a, this[a.name] = a, this[b] = a
+        }
+        item(a) {
+            return this.__plugins[a]
+        }
+        namedItem(a) {
+            return this.__named_plugins[a]
+        }
+        refresh() {}
+        get length() {
+            return this.__plugins.length
+        }
+    }
+    const FLASH_PLUGIN = new RufflePlugin("Shockwave Flash", "Shockwave Flash 32.0 r0", "ruffle.js", [new RuffleMimeType("application/futuresplash", "Shockwave Flash", "spl"), new RuffleMimeType("application/x-shockwave-flash", "Shockwave Flash", "swf"), new RuffleMimeType("application/x-shockwave-flash2-preview", "Shockwave Flash", "swf"), new RuffleMimeType("application/vnd.adobe.flash.movie", "Shockwave Flash", "swf")]);
+
+    function install_plugin(a) {
+        navigator.plugins.install || Object.defineProperty(navigator, "plugins", {
+            value: new RufflePluginArray(navigator.plugins),
+            writable: !1
+        }), navigator.plugins.install(a), 0 < a.length && !navigator.mimeTypes.install && Object.defineProperty(navigator, "mimeTypes", {
+            value: new RuffleMimeTypeArray(navigator.mimeTypes),
+            writable: !1
+        });
+        for (var b = 0; b < a.length; b += 1) navigator.mimeTypes.install(a[b])
+    }
+    install_plugin(FLASH_PLUGIN);
+})();
+</script><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="keywords" content="Hexo Theme Keep"><meta name="description" content="Hexo Theme Keep"><meta name="author" content="小何先生"><title>MC自由国度介绍 | 倚栏听风</title><link rel="shortcut icon" href="./images/favicon.ico"><link rel="stylesheet" href="./static/style.css"><link rel="stylesheet" href="./static/fontawesome.min.css"><link rel="stylesheet" href="./static/regular.min.css"><link rel="stylesheet" href="./static/solid.min.css"><link rel="stylesheet" href="./static/brands.min.css"><script id="hexo-configurations">let KEEP=window.KEEP||{};KEEP.hexo_config={hostname:"example.com",root:"/",language:"zh-CN",path:"search.xml"},KEEP.theme_config={toc:{enable:!0,number:!1,expand_all:!1,init_open:!1},style:{primary_color:"#0066cc",favicon:"https://s1.vika.cn/space/2023/02/17/636f34bd24a040a1a135e5c36e6265f7",avatar:"https://s1.vika.cn/space/2023/02/17/0c1c4a6b023b42f38aaf39d480206e26",font_size:null,font_family:null,hover:{shadow:!0,scale:!0},first_screen:{enable:!0,header_transparent:!0,background_img:"/images/bg.svg",description:"Keep writing and Keep loving.",font_color:null,hitokoto:!0},scroll:{progress_bar:!1,percent:!0}},local_search:{enable:!0,preload:!0},code_copy:{},code_block:{tools:{enable:!0,style:"mac"},highlight_theme:"default"},side_tools:{},pjax:{enable:!0},lazyload:{enable:!0},comment:{enable:!0,use:"waline",valine:{appid:null,appkey:null,server_urls:null,placeholder:null},gitalk:{github_id:null,github_admins:null,repository:null,client_id:null,client_secret:null,proxy:null},twikoo:{env_id:null,region:null,version:"1.6.8"},waline:{server_url:"https://waline.htop.work/",reaction:!1,version:2}},post:{author_label:{enable:!0,auto:!1,custom_label_list:["Trainee","Engineer","Architect"]},word_count:{enable:!0,wordcount:!0,min2read:!0},img_align:"left",copyright_info:!1},version:"3.6.1"},KEEP.language_ago={second:"%s 秒前",minute:"%s 分钟前",hour:"%s 小时前",day:"%s 天前",week:"%s 周前",month:"%s 个月前",year:"%s 年前"},KEEP.language_code_block={copy:"复制代码",copied:"已复制",fold:"折叠代码块",folded:"已折叠"},KEEP.language_copy_copyright={copy:"复制版权信息",copied:"已复制",title:"原文标题",author:"原文作者",link:"原文链接"}</script><meta name="generator" content="Hexo 6.3.0"><style type="text/css" id="vueuse_styletag_1"></style></head><body class="light-mode"><div style="position: fixed; z-index: 2147483647; opacity: 0.9; display: none; top: 10px; right: 10px;"><template shadowrootmode="open"><div data-shown="true"><div style="text-align: right;">
+        <span class="number-indicator" data-number="0" style="
+                display: inline-flex;
+                width: 25px;
+                height: 25px;
+                background: black;
+                padding: 10px;
+                border-radius: 100px;
+                margin-bottom: 5px;
+                cursor: pointer;
+                border: 3px solid #83838382;
+            ">
+            <svg style="
+                filter: invert(1);
+            " version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 585.913 585.913" xml:space="preserve">
+                <g>
+                    <path d="M11.173,46.2v492.311l346.22,47.402V535.33c0.776,0.058,1.542,0.109,2.329,0.109h177.39
+                    c20.75,0,37.627-16.883,37.627-37.627V86.597c0-20.743-16.877-37.628-37.627-37.628h-177.39c-0.781,0-1.553,0.077-2.329,0.124V0
+                    L11.173,46.2z M110.382,345.888l-1.37-38.273c-0.416-11.998-0.822-26.514-0.822-41.023l-0.415,0.01
+                    c-2.867,12.767-6.678,26.956-10.187,38.567l-10.961,38.211l-15.567-0.582l-9.239-37.598c-2.801-11.269-5.709-24.905-7.725-37.361
+                    l-0.25,0.005c-0.503,12.914-0.879,27.657-1.503,39.552L50.84,343.6l-17.385-0.672l5.252-94.208l25.415-0.996l8.499,32.064
+                    c2.724,11.224,5.467,23.364,7.428,34.819h0.389c2.503-11.291,5.535-24.221,8.454-35.168l9.643-33.042l27.436-1.071l5.237,101.377
+                    L110.382,345.888z M172.479,349.999c-12.569-0.504-23.013-4.272-28.539-8.142l4.504-17.249c3.939,2.226,13.1,6.445,22.373,6.687
+                    c12.009,0.32,18.174-5.497,18.174-13.218c0-10.068-9.838-14.683-19.979-14.74l-9.253-0.052v-16.777l8.801-0.066
+                    c7.708-0.208,17.646-3.262,17.646-11.905c0-6.121-4.914-10.562-14.635-10.331c-7.95,0.189-16.245,3.914-20.213,6.446l-4.52-16.693
+                    c5.693-4.008,17.224-8.11,29.883-8.588c21.457-0.795,33.643,10.407,33.643,24.625c0,11.029-6.197,19.691-18.738,24.161v0.314
+                    c12.229,2.216,22.266,11.663,22.266,25.281C213.89,338.188,197.866,351.001,172.479,349.999z M331.104,302.986
+                    c0,36.126-19.55,52.541-51.193,51.286c-29.318-1.166-46.019-17.103-46.019-52.044v-61.104l25.711-1.006v64.201
+                    c0,19.191,7.562,29.146,21.179,29.502c14.234,0.368,22.189-8.976,22.189-29.26v-66.125l28.122-1.097v65.647H331.104z
+                    M359.723,70.476h177.39c8.893,0,16.125,7.236,16.125,16.126v411.22c0,8.888-7.232,16.127-16.125,16.127h-177.39
+                    c-0.792,0-1.563-0.116-2.329-0.232V380.782c17.685,14.961,40.504,24.032,65.434,24.032c56.037,0,101.607-45.576,101.607-101.599
+                    c0-56.029-45.581-101.603-101.607-101.603c-24.93,0-47.749,9.069-65.434,24.035V70.728
+                    C358.159,70.599,358.926,70.476,359.723,70.476z M390.873,364.519V245.241c0-1.07,0.615-2.071,1.586-2.521
+                    c0.981-0.483,2.13-0.365,2.981,0.307l93.393,59.623c0.666,0.556,1.065,1.376,1.065,2.215c0,0.841-0.399,1.67-1.065,2.215
+                    l-93.397,59.628c-0.509,0.4-1.114,0.61-1.743,0.61l-1.233-0.289C391.488,366.588,390.873,365.585,390.873,364.519z"></path>
+                </g>
+            </svg>
+        </span>
+    </div><style>
+        .number-indicator{
+            position:relative;
+        }
+
+        .number-indicator::after{
+            content: attr(data-number);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #40a9ff;
+            font-size: 14px;
+            font-weight: bold;
+            background: #000;
+            border-radius: 10px;
+            padding: 3px 5px;
+        }
+
+        .copy-link:active{
+            color: #ccc;
+        }
+
+        .download-btn:hover{
+            text-decoration: underline;
+        }
+        .download-btn:active{
+            opacity: 0.9;
+        }
+
+        .m3u8-item{
+            color: white;
+            margin-bottom: 5px;
+            display: flex;
+            flex-direction: row;
+            background: black;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            user-select: none;
+        }
+
+        [data-shown="false"] {
+            opacity: 0.8;
+            zoom: 0.8;
+        }
+
+        [data-shown="false"]:hover{
+            opacity: 1;
+        }
+
+        [data-shown="false"] .m3u8-item{
+            display: none;
+        }
+
+    </style></div></template></div><div class="progress-bar-container"><span class="pjax-progress-bar" style="width: 0px;"></span> <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i></div><main class="page-container"><div class="page-main-content"><div class="page-main-content-top"><header class="header-wrapper transparent-1"><div class="header-content"><div class="left"><a class="logo-title" href="https://iweek.eu.org/" data-pjax-state="">倚栏听风</a></div><div class="right"><div class="pc"><ul class="menu-list"><li class="menu-item"><a href="https://iweek.eu.org/" data-pjax-state="">首页</a></li><li class="menu-item"><a href="https://iweek.eu.org/archives" data-pjax-state="">归档</a></li><li class="menu-item"><a href="https://iweek.eu.org/tags" data-pjax-state="">标签</a></li><li class="menu-item"><a href="https://iweek.eu.org/categories" data-pjax-state="">分类</a></li><li class="menu-item"><a href="https://iweek.eu.org/links" data-pjax-state="">友链</a></li><li class="menu-item"><a href="https://iweek.eu.org/about" data-pjax-state="">关于</a></li><li class="menu-item search search-popup-trigger"></li></ul></div><div class="mobile"><div class="icon-item menu-bar"><div class="menu-bar-middle"></div></div></div></div></div><div class="header-drawer"><ul class="drawer-menu-list"><li class="drawer-menu-item flex-center"><a href="https://iweek.eu.org/" data-pjax-state="">首页</a></li><li class="drawer-menu-item flex-center"><a href="https://iweek.eu.org/archives" data-pjax-state="">归档</a></li><li class="drawer-menu-item flex-center"><a href="https://iweek.eu.org/tags" data-pjax-state="">标签</a></li><li class="drawer-menu-item flex-center"><a href="https://iweek.eu.org/categories" data-pjax-state="">分类</a></li><li class="drawer-menu-item flex-center"><a href="https://iweek.eu.org/links" data-pjax-state="">友链</a></li><li class="drawer-menu-item flex-center"><a href="https://iweek.eu.org/about" data-pjax-state="">关于</a></li></ul></div><div class="window-mask"></div></header></div><div class="page-main-content-middle"><div class="main-content"><div class="fade-in-down-animation"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><span class="title-hover-animation">MC自由国度介绍</span></div><div class="article-header"><div class="avatar"><img src="./static/ym.png"></div><div class="info"><div class="author"><span class="name">小何先生</span> <span class="author-label">Architect</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item">&nbsp; <span class="pc">2023-04-04 16:54:36</span> <span class="mobile">2023-04-04 16:54</span> </span><span class="article-wordcount article-meta-item"><span>485 字</span> </span><span class="article-min2read article-meta-item"><span>2 分钟</span></span></div></div></div></div><div class="article-content keep-markdown-body"><p>本人萌新小白，用吃灰的黑群晖搭了个我的世界Java服务器，无密码、无插件、无op，纯生存，简易难度。主打的就是一个养老摸鱼，自由发展，随心所欲！</p><br><p>游戏地图为1：3500 MC版的中国地图，由MCBBS用户 <a class="link" target="_blank" rel="noopener" href="https://www.mcbbs.net/home.php?mod=space&amp;uid=1796272" data-pjax-state="">@Po_er</a> 制作</p><p>地图介绍：<a class="link" target="_blank" rel="noopener" href="https://www.mcbbs.net/forum.php?mod=viewthread&amp;tid=721904" data-pjax-state="">Minecraft/我的世界 Map of China V2.0 中国地图-历时两年的追梦之作 </a></p><p>地图视频：<a class="link" target="_blank" rel="noopener" href="https://www.bilibili.com/video/av15352509" data-pjax-state="">震惊！国人玩家花将近2年还原中国地形全貌！</a></p><br><p>全版本支持：1.8-1.19.4</p><p>服务器地址：mcsvr.eu.org</p><p>不出意外的话，服务器能一直开到机器爆炸！</p><br><p><strong>相关插件：</strong></p><table><thead><tr><th>插件名称</th><th>作用</th><th>相关链接</th></tr></thead><tbody><tr><td>Residence5.1.1.1</td><td>领地插件</td><td><a class="link" target="_blank" rel="noopener" href="https://www.mcbbs.net/thread-631343-1-1.html" data-pjax-state="">Residence——领地，安全地保护玩家的领地</a></td></tr><tr><td>CMILib1.2.5.2</td><td>前置插件，安装Residence5.0以上需要</td><td><a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/cmilib.87610/" data-pjax-state="">SpigotMC - High Performance Minecraft</a></td></tr><tr><td>UltiTools</td><td>基础插件</td><td><a class="link" target="_blank" rel="noopener" href="https://doc.ultitools.ultikits.com/guide/install.html" data-pjax-state="">安装UltiTools</a></td></tr><tr><td>PlaceholderAPI-2.11.3</td><td>前置插件，安装UltiTools需要</td><td><a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/placeholderapi.6245/" data-pjax-state="">https://www.spigotmc.org/resources/placeholderapi.6245/</a></td></tr><tr><td>UltiCore</td><td>前置插件，安装UltiTools需要</td><td><a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/ultikits-ulticore.86207/" data-pjax-state="">https://www.spigotmc.org/resources/ultikits-ulticore.86207/</a></td></tr><tr><td>Vault</td><td>前置插件，安装UltiTools需要</td><td><a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/vault.34315/" data-pjax-state="">https://www.spigotmc.org/resources/vault.34315/</a></td></tr><tr><td>ViaBackwards-4.6.1</td><td>使用<a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/viabackwards.27448/" data-pjax-state="">ViaBackwards</a>和<a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/viarewind.52109/" data-pjax-state="">ViaRewind</a>允许旧版本连接</td><td><a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/viabackwards.27448/" data-pjax-state="">https://www.spigotmc.org/resources/viabackwards.27448/</a></td></tr><tr><td>ViaRewind-2.0.3</td><td>允许 1.7.x 和 1.8.x 连接到您的 1.8-1.16.2 服务器。</td><td><a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/viarewind.52109/" data-pjax-state="">https://www.spigotmc.org/resources/viarewind.52109/</a></td></tr><tr><td>ViaVersion-4.6.2</td><td>跨版本插件，允许较新版本连接</td><td><a class="link" target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/viaversion.19254/" data-pjax-state="">https://www.spigotmc.org/resources/viaversion.19254/</a></td></tr><tr><td>NoCheatPlus-1.0.0</td><td>反作弊插件</td><td><a class="link" target="_blank" rel="noopener" href="https://www.mcbbs.net/forum.php?mod=viewthread&amp;tid=1430379" data-pjax-state="">NoCheatPlus —— 先进的反作弊插件</a></td></tr><tr><td>NoCheatPlus-1.0.0-jar-with-dependencies</td><td>反作弊插件依赖</td><td><a class="link" target="_blank" rel="noopener" href="https://ci.lanink.cn/job/NoCheatPlus/" data-pjax-state="">NoCheatPlus </a></td></tr><tr><td>KotlinLib</td><td>前置插件，反作弊插件依赖</td><td><a class="link" target="_blank" rel="noopener" href="https://cloudburstmc.org/resources/kotlinlib.48/history" data-pjax-state="">KotlinLib - History</a></td></tr><tr><td>tpmPlugin</td><td>传送插件 支持地址传送和玩家传送</td><td><a class="link" target="_blank" rel="noopener" href="https://gitee.com/gumengmengs/tpm-plugin" data-pjax-state="">tpmPlugin</a></td></tr></tbody></table><p><strong>参考链接：</strong></p><p>群晖搭建教程：<a class="link" target="_blank" rel="noopener" href="https://marc.tv/anleitung-stabiler-minecraft-server-synology-nas/" data-pjax-state="">Java Minecraft Server 1.19 auf Synology NAS installieren (marc.tv)</a></p><p>Docker镜像来自：<a class="link" target="_blank" rel="noopener" href="https://registry.hub.docker.com/r/marctv/minecraft-papermc-server/" data-pjax-state="">marctv/minecraft-papermc-server - Docker Image | Docker Hub</a></p><p>地图来自MCBBS用户 <a class="link" target="_blank" rel="noopener" href="https://www.mcbbs.net/home.php?mod=space&amp;uid=1796272" data-pjax-state="">@Po_er</a>：<a class="link" target="_blank" rel="noopener" href="https://www.mcbbs.net/forum.php?mod=viewthread&amp;tid=721904" data-pjax-state="">Minecraft/我的世界 Map of China V2.0 中国地图</a></p></div></div></div></div></div></div></div><div class="zoom-in-image-mask"><img class="zoom-in-image"></div><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fas fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="close-popup-btn"><i class="fas fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fas fa-search fa-5x"></i></div></div></div></div></main><style>
+            button[data-wtmzjk-mag-url]{
+                all: initial;
+                border: none;
+                outline: none;
+                background: none;
+                background: #f7d308;
+                background: #08a6f7;
+                margin: 2px 8px;
+                border-radius: 3px;
+                color: white;
+                cursor: pointer;
+                display: inline-flex;
+                height: 1.6em;
+                padding: 0 .8em;
+                align-items: center;
+                justify-content: center;
+                transition: background .15s;
+                text-decoration: none;
+                border-radius: 0.8em;
+                font-size: small;
+            }
+            button[data-wtmzjk-mag-url]>svg{
+                height: 60%;
+                fill: white;
+                pointer-events: none;
+            }
+            button[data-wtmzjk-mag-url]:hover{
+                background: #fae157;
+                background: #39b9f9;
+            }
+            button[data-wtmzjk-mag-url]:active{
+                background: #dfbe07;
+                background: #0797df;
+            }
+            button[data-wtmzjk-mag-url]>span{
+                pointer-events: none;
+                font-size: small;margin-right: .5em;font-weight:bold;color:white !important;
+            }
+        </style></body></html>
